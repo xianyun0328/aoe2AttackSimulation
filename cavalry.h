@@ -1,6 +1,6 @@
 #ifndef Calalry_H
 #define Calalry_H
-#include "Unit.h"
+#include "unit.h"
 //骑兵类
 class Calalry : public Unit{
     public:

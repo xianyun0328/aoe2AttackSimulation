@@ -1,16 +1,14 @@
-CXX = g++
-TARGET = demo 
-SRC = $(wildcard *.cpp)
-OBJ = $(patsubst %.cpp, %.o, $(SRC))
+iCXX = g++
+CXXFLAGS = -std=c++14 -Wall -Werror=vla -g -MMD
+EXEC = aoe2AttackSimulator
+OBJECTS = main.o unit.o cavalry.o infantry.o
+DEPENDS = ${OBJECTS:.o=.d}
 
-CXXFLAGS = -c -Wall
+${EXEC}: ${OBJECTS}
+	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
 
-$(TARGET): $(OBJ)
-	$(CXX) -o $@ $^
+-include ${DEPENDS}
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@
-
-.PHONY: clean
 clean:
-	rm -f *.o $(TARGET)
+	rm ${OBJECTS} ${EXEC} ${DEPENDS}
+.PHONY: clean

@@ -1,5 +1,5 @@
 
-#include "Calalry.h"
+#include "cavalry.h"
 Calalry :: Calalry(){
     HP_max = 100;
     HP_cur = 100;

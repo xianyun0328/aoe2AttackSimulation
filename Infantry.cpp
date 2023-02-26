@@ -1,4 +1,4 @@
-#include "Infantry.h"
+#include "infantry.h"
 Infantry::Infantry(){
     HP_max = 50;
     HP_cur = 50;
