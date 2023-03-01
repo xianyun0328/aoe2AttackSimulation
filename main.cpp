@@ -2,24 +2,15 @@
 #include "unit.h"
 #include "infantry.h"
 #include "cavalry.h"
+#include "chacha.h"
+#include "luotuo.h"
 using namespace std;
 int main(){
-    cout << "starting simulation..." << endl;
-    // Infantry *chacha = new Infantry();
-    // Calalry *jinma = new Calalry();
-    // bool gameOver = true;
-    // while(gameOver){
-    //     chacha->attack(jinma);
-    //     jinma->attack(chacha);
-    //     if(chacha->HP_cur<=0){
-    //         cout<<"chacha say GG"<<endl;
-    //         gameOver = false;
-    //     }
-    //     if(jinma->HP_cur<=0){
-    //         cout<<"jinma say GG"<<endl;
-    //         gameOver = false;
-    //     }
-    // }
-    cout << "ending simulation..." << endl;
+    // cout << "starting simulation..." << endl;
+    // cout << "ending simulation..." << endl;
+    chacha *s = new chacha(10,10,10,10);
+    luotuo *lt = new luotuo(200,5,5,10);
+    s->unit_attack(lt);
+    lt->printfUnit();
     return 0;
 }

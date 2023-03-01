@@ -2,8 +2,10 @@
 #define Calalry_H
 #include "unit.h"
 //骑兵类
-class Calalry : public Unit{
+class Cavalry : public Unit{
     public:
-        Calalry();
+        Cavalry(int HPmax,int attack,int armor,int reloadTime):Unit(HPmax,attack,armor,reloadTime){
+
+        };
 };
 #endif
