@@ -11,7 +11,7 @@ class Unit{
         int armor;//防御力
         int reloadTime;//攻击间隔
     public:
-        Unit(int HPmax,int attack,int armor,int reloadTime);
+        Unit();
         virtual void unit_attack(Unit *a);//攻击
         virtual void unit_attackedBy(Unit *b);//被攻击
         //observer();// 观察者
@@ -22,7 +22,12 @@ class Unit{
         int getattack();
         int getarmor();
         int getreloadTime();
-        void setHPcur(int HPcur);
         void setName(string name);
+        void setHPmax(int HPmax);
+        void DelHPcur(int delHPcur);
+        void setHPcur(int HPcur);
+        void setattack(int attack);
+        void setarmor(int armor);
+        void setreloadTime(int reloadTime);
 };
 #endif

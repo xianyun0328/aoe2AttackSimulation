@@ -8,8 +8,8 @@ using namespace std;
 int main(){
     // cout << "starting simulation..." << endl;
     // cout << "ending simulation..." << endl;
-    Pikeman *s = new Pikeman(10,10,10,10);
-    Camel *lt = new Camel(200,5,5,10);
+    Pikeman *s = new Pikeman();
+    Camel *lt = new Camel();
     s->unit_attack(lt);
     lt->printfUnit();
     return 0;

@@ -4,7 +4,7 @@
 //骑兵类
 class Cavalry : public Unit{
     public:
-        Cavalry(int HPmax,int attack,int armor,int reloadTime):Unit(HPmax,attack,armor,reloadTime){
+        Cavalry():Unit(){
 
         };
 };

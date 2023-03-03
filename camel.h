@@ -5,8 +5,13 @@
 //骑兵类
 class Camel : public Cavalry{
     public:
-        Camel(int HPmax,int attack,int armor,int reloadTime):Cavalry(HPmax,attack,armor,reloadTime){
+        Camel():Cavalry(){
             this->setName("Camel");
+            this->setHPmax(120);
+            this->setHPcur(120);
+            this->setattack(6);
+            this->setarmor(0);
+            this->setreloadTime(1000);
         };
         void unit_attack(Unit *a);//攻击
         void unit_attackedBy(Unit *b);//被攻击

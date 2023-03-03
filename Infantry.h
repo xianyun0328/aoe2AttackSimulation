@@ -4,7 +4,7 @@
 //步兵类
 class Infantry : public Unit{
     public:
-        Infantry(int HPmax,int attack,int armor,int reloadTime):Unit(HPmax,attack,armor,reloadTime){
+        Infantry():Unit(){
 
         };
 };

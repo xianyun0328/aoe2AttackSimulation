@@ -4,5 +4,5 @@ void Pikeman::unit_attack(Unit *a){
 }
 void Pikeman::unit_attackedBy(Unit *b){
     int delHPnum = b->getattack() - this->getarmor();
-    this->setHPcur(delHPnum);   
+    this->DelHPcur(delHPnum);   
 }

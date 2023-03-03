@@ -5,8 +5,13 @@
 //叉叉
 class Pikeman : public Infantry{
     public:
-        Pikeman(int HPmax,int attack,int armor,int reloadTime):Infantry(HPmax,attack,armor,reloadTime){
+        Pikeman():Infantry(){
             this->setName("Pikeman");
+            this->setHPmax(50);
+            this->setHPcur(50);
+            this->setattack(3);
+            this->setarmor(0);
+            this->setreloadTime(1000);
         };
         void unit_attack(Unit *a);//攻击
         void unit_attackedBy(Unit *b);//被攻击
