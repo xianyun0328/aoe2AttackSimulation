@@ -6,11 +6,13 @@
 #include "camel.h"
 using namespace std;
 int main(){
-    // cout << "starting simulation..." << endl;
-    // cout << "ending simulation..." << endl;
-    Pikeman *s = new Pikeman();
-    Camel *lt = new Camel();
-    s->unit_attack(lt);
-    lt->printfUnit();
+    cout << "starting simulation..." << endl;
+    Pikeman *p1 = new Pikeman();
+    Camel *c1 = new Camel();
+    cout << *c1 << endl;
+    cout << *p1 << endl;
+    // s->unit_attack(lt);
+    // lt->printUnit();
+    cout << "ending simulation..." << endl;
     return 0;
 }

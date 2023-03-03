@@ -4,8 +4,6 @@
 //步兵类
 class Infantry : public Unit{
     public:
-        Infantry():Unit(){
-
-        };
+        Infantry(string name, int HP_max, int attack, int armor, int reloadTime);
 };
 #endif

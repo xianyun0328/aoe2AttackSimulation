@@ -9,25 +9,30 @@ class Unit{
         int HP_cur;//当前血量
         int attack;//攻击力
         int armor;//防御力
-        int reloadTime;//攻击间隔
+        int reloadTime;//攻击间隔 (in ms)
     public:
-        Unit();
+        Unit(string name, int HP_max, int attack, int armor, int reloadTime);
         virtual void unit_attack(Unit *a);//攻击
         virtual void unit_attackedBy(Unit *b);//被攻击
         //observer();// 观察者
-        void printfUnit();
+
+        // getters
         string getname();
         int getHPmax();
         int getHPcur();
         int getattack();
         int getarmor();
         int getreloadTime();
-        void setName(string name);
-        void setHPmax(int HPmax);
-        void DelHPcur(int delHPcur);
-        void setHPcur(int HPcur);
-        void setattack(int attack);
-        void setarmor(int armor);
-        void setreloadTime(int reloadTime);
+        
+        void reduceHPcur(int reduceBy);
+        // void setName(string name);
+        // void setHPmax(int HPmax);
+        // void setHPcur(int HPcur);
+        // void setattack(int attack);
+        // void setarmor(int armor);
+        // void setreloadTime(int reloadTime);
+    
+    friend ostream & operator << (ostream &out, const Unit &u);
+
 };
 #endif
