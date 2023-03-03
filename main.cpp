@@ -11,6 +11,7 @@ int main(){
     Camel *c1 = new Camel();
     cout << *c1 << endl;
     cout << *p1 << endl;
+    p1->unit_attack(*c1);
     // s->unit_attack(lt);
     // lt->printUnit();
     cout << "ending simulation..." << endl;

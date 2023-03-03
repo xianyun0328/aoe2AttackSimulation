@@ -36,7 +36,3 @@ int Unit::getreloadTime(){
 void Unit::reduceHPcur(int reduce_by) {
     HP_cur -= reduce_by;
 }
-void Unit::unit_attack(Unit *a){
-}
-void Unit::unit_attackedBy(Unit *b){
-}
