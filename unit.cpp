@@ -7,7 +7,11 @@ Unit::Unit(string name, int HP_max, int attack, int armor, int reloadTime) :
 name(name), HP_max(HP_max), HP_cur(HP_max), attack(attack), armor(armor), reloadTime(reloadTime){}
 
 ostream & operator << (ostream &out, const Unit &u){
-    out<<"name: "<<u.name<<endl;
+    out<<"name: "<<u.name;
+    if(u.debug_tag != "") {
+        out << " " << u.debug_tag;
+    } 
+    out << endl;
     out <<"HP: "<<u.HP_cur<<"/"<<u.HP_cur<<endl;
     out <<"attack: "<<u.attack<<endl;
     out <<"armor: "<<u.armor<<endl;
@@ -35,4 +39,8 @@ int Unit::getreloadTime(){
 }
 void Unit::reduceHPcur(int reduce_by) {
     HP_cur -= reduce_by;
+}
+
+void Unit::setDebugTag(string tag) {
+    debug_tag = tag;
 }

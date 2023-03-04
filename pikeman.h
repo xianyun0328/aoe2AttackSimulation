@@ -7,5 +7,7 @@ class Pikeman : public Infantry{
     public:
     Pikeman();
     void unit_attack(Unit &opponent) override;
+    void unit_attackedBy(Pikeman &opponent) override;
+    void unit_attackedBy(Camel &opponent) override;
 };
 #endif
