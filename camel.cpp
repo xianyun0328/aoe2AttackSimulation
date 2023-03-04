@@ -7,15 +7,16 @@ using std::cout;
 
 Camel::Camel() : Cavalry("camel rider", 100, 6, 0, 2000){}
 void Camel::unit_attack(Unit &opponent){
-    cout << *this << endl;
+    Unit::unit_attack(opponent);
     opponent.unit_attackedBy(*this);
 }
 
-void Camel::unit_attackedBy(Pikeman &opponent) {
+int Camel::unit_attackedBy(Pikeman &opponent) {
     cout << "camel attacked by pikeman!" << endl;
-    cout << *this << endl;
+    Cavalry::unit_attackedBy(opponent); // pikeman to cav bonus
+    return 0;
 }
-void Camel::unit_attackedBy(Camel &opponent) {
+int Camel::unit_attackedBy(Camel &opponent) {
     cout << "camel attacked by camel!" << endl;
-    cout << *this << endl;
+    return 0;
 }

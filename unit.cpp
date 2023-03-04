@@ -44,3 +44,13 @@ void Unit::reduceHPcur(int reduce_by) {
 void Unit::setDebugTag(string tag) {
     debug_tag = tag;
 }
+
+
+ void Unit::unit_attack(Unit &opponent) {
+   cout << *this << endl;
+   cout << "attacking" << endl;
+   cout << opponent << endl;
+   int base_damage =  max(this->getattack() - opponent.getarmor(), 1); // at least 1 hit point
+   cout << "deducting base damage: "<< opponent.getattack() << "-" << this->getarmor() << "=" << base_damage << endl;
+ }
+ 

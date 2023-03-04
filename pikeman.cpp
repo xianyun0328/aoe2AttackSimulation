@@ -8,15 +8,15 @@ using std::cout;
 Pikeman::Pikeman() : Infantry("pikeman", 55, 4, 0, 3000){}
 
 void Pikeman::unit_attack(Unit &opponent){
-    cout << *this << endl;
+    Unit::unit_attack(opponent);
     opponent.unit_attackedBy(*this);
 }
 
-void Pikeman::unit_attackedBy(Pikeman &opponent) {
+int Pikeman::unit_attackedBy(Pikeman &opponent) {
     cout << "pikeman attacked by pikeman!" << endl;
-    cout << *this << endl;
+    return 0;
 }
-void Pikeman::unit_attackedBy(Camel &opponent) {
+int Pikeman::unit_attackedBy(Camel &opponent) {
     cout << "pikeman attacked by camel!" << endl;
-    cout << *this << endl;
+    return 0;
 }

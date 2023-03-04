@@ -17,11 +17,11 @@ class Unit{
         string debug_tag;
     public:
         Unit(string name, int HP_max, int attack, int armor, int reloadTime);
-        virtual void unit_attack(Unit &opponent) = 0;//攻击
+        virtual void unit_attack(Unit &opponent);//攻击
 
-        //被攻击
-        virtual void unit_attackedBy(Pikeman &opponent) = 0;
-        virtual void unit_attackedBy(Camel &opponent) = 0;
+        //被攻击, returns damage
+        virtual int unit_attackedBy(Pikeman &opponent) = 0;
+        virtual int unit_attackedBy(Camel &opponent) = 0;
         //observer();// 观察者
 
         // getters

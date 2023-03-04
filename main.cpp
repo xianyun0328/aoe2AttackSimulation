@@ -16,10 +16,10 @@ int main(){
     Camel *c2 = new Camel();
     c2->setDebugTag("D");
 
-    p1->unit_attack(*p2); // pike attacks pike
+    // p1->unit_attack(*p2); // pike attacks pike
     p1->unit_attack(*c1); // pike attacks camel
-    c1->unit_attack(*c2); // camel attacks camel
-    c1->unit_attack(*p1); // camel attacks pike
+    // c1->unit_attack(*c2); // camel attacks camel
+    // c1->unit_attack(*p1); // camel attacks pike
 
     cout << "ending simulation..." << endl;
     return 0;
