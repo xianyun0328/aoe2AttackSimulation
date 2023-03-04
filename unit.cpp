@@ -8,7 +8,7 @@ name(name), HP_max(HP_max), HP_cur(HP_max), attack(attack), armor(armor), reload
 
 ostream & operator << (ostream &out, const Unit &u){
     out<<"name: "<<u.name<<endl;
-    out <<"HP: "<<u.HP_cur<<"/"<<u.HP_cur<<endl;
+    out <<"HP: "<<u.HP_cur<<"/"<<u.HP_max<<endl;
     out <<"attack: "<<u.attack<<endl;
     out <<"armor: "<<u.armor<<endl;
     out <<"reloadTime: "<<u.reloadTime<<endl;
@@ -36,7 +36,8 @@ int Unit::getreloadTime(){
 void Unit::reduceHPcur(int reduce_by) {
     HP_cur -= reduce_by;
 }
-void Unit::unit_attack(Unit *a){
-}
-void Unit::unit_attackedBy(Unit *b){
+void Unit::unit_attack(Unit *opponent){
+    int delNum = max(this->getattack() - opponent->getarmor(),1);//计算基础伤害,最低1点
+    cout<<"delNUM"<<delNum<<endl;
+    opponent->reduceHPcur(delNum);
 }

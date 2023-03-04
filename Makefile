@@ -1,6 +1,6 @@
 iCXX = g++
 CXXFLAGS = -std=c++14 -Wall -Werror=vla -g -MMD
-EXEC = aoe2AttackSimulator
+EXEC = aoe2AttackSimulator.exe
 OBJECTS = main.o unit.o cavalry.o infantry.o camel.o pikeman.o
 DEPENDS = ${OBJECTS:.o=.d}
 
@@ -10,5 +10,5 @@ ${EXEC}: ${OBJECTS}
 -include ${DEPENDS}
 
 clean:
-	rm ${OBJECTS} ${EXEC} ${DEPENDS}
+	del ${OBJECTS} ${EXEC} ${DEPENDS}
 .PHONY: clean

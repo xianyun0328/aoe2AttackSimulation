@@ -6,5 +6,7 @@ using std::string;
 class Cavalry : public Unit{
     public:
     Cavalry(string name, int HP_max, int attack, int armor, int reloadTime);
+    int unit_attackedBy(Pikeman *opponent) override;
+    int unit_attackedBy(Camel *opponent) override;
 };
 #endif

@@ -1,15 +1,14 @@
 #include "camel.h"
 
 Camel::Camel() : Cavalry("camel rider", 100, 6, 0, 2000){}
-// void Camel::unit_attack(Unit *a){
 
-// }
-
-// void Camel::unit_attackedBy(Unit *b){
-//     int delHPnum = b->getattack() - this->getarmor();
-//     if(b->getname() == "Pikeman"){
-//          delHPnum += 20;
-//          cout<<"changjibing+20 sum del:"<<delHPnum<<endl;
-//     }
-//     this->DelHPcur(delHPnum);
-// }
+void Camel::unit_attack(Unit *opponent){
+    Unit::unit_attack(opponent);
+    opponent->reduceHPcur(opponent->unit_attackedBy(this));
+}
+int Camel::unit_attackedBy(Pikeman *opponent){
+    return Cavalry::unit_attackedBy(opponent)+9;
+}
+int Camel::unit_attackedBy(Camel *opponent){
+    return 9;
+}

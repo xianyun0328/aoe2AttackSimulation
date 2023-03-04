@@ -3,11 +3,12 @@
 #include "cavalry.h"
 #include "unit.h"
 // using std::string;
-//骑兵类
+//骆驼类
 class Camel : public Cavalry{
     public:
         Camel();
-        // void unit_attack(Unit *a);//攻击
-        // void unit_attackedBy(Unit *b);//被攻击
+        void unit_attack(Unit *opponent) override;
+        int unit_attackedBy(Pikeman *opponent) override;
+        int unit_attackedBy(Camel *opponent) override;
 };
 #endif
