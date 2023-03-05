@@ -36,8 +36,8 @@ int Unit::getreloadTime(){
 void Unit::reduceHPcur(int reduce_by) {
     HP_cur -= reduce_by;
 }
-void Unit::unit_attack(Unit *opponent){
-    int delNum = max(this->getattack() - opponent->getarmor(),1);//计算基础伤害,最低1点
+void Unit::unit_attack(Unit &opponent){
+    int delNum = max(this->getattack() - opponent.getarmor(),1);//计算基础伤害,最低1点
     cout<<"delNUM"<<delNum<<endl;
-    opponent->reduceHPcur(delNum);
+    opponent.reduceHPcur(delNum);
 }

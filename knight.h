@@ -1,11 +1,12 @@
-#ifndef Pikeman_H
-#define Pikeman_H
-#include "infantry.h"
+#ifndef Knight_H
+#define Knight_H
 #include "unit.h"
-//叉叉
-class Pikeman : public Infantry{
+#include "cavalry.h"
+//using std::string;
+//骑士类
+class Knight : public Cavalry{
     public:
-        Pikeman();
+        Knight();
         void unit_attack(Unit &opponent) override;
         int unit_attackedBy(Pikeman &opponent) override;
         int unit_attackedBy(Camel &opponent) override;

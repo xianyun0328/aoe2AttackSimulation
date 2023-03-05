@@ -1,11 +1,12 @@
-#ifndef Pikeman_H
-#define Pikeman_H
-#include "infantry.h"
+#ifndef Mamluk_H
+#define Mamluk_H
+#include "camel.h"
 #include "unit.h"
-//叉叉
-class Pikeman : public Infantry{
+// using std::string;
+//马穆鲁克类
+class Mamluk : public Camel{
     public:
-        Pikeman();
+        Mamluk();
         void unit_attack(Unit &opponent) override;
         int unit_attackedBy(Pikeman &opponent) override;
         int unit_attackedBy(Camel &opponent) override;

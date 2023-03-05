@@ -7,8 +7,11 @@
 class Camel : public Cavalry{
     public:
         Camel();
-        void unit_attack(Unit *opponent) override;
-        int unit_attackedBy(Pikeman *opponent) override;
-        int unit_attackedBy(Camel *opponent) override;
+        Camel(string name, int HP_max, int attack, int armor, int reloadTime);
+        void unit_attack(Unit &opponent) override;
+        int unit_attackedBy(Pikeman &opponent) override;
+        int unit_attackedBy(Camel &opponent) override;
+        int unit_attackedBy(Knight &opponent) override;
+        int unit_attackedBy(Mamluk &opponent) override;
 };
 #endif
