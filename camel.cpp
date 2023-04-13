@@ -1,10 +1,8 @@
 #include "camel.h"
-
 // remove, added for showing polymorphsim
 #include <iostream>
 using std::cout;
 // end of remove
-
 Camel::Camel() : Cavalry("camel rider", 100, 6, 0, 2000){}
 void Camel::unit_attack(Unit &opponent){
     Unit::unit_attack(opponent);

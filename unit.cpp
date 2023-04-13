@@ -5,7 +5,7 @@ using std::ostream;
 
 Unit::Unit(string name, int HP_max, int attack, int armor, int reloadTime) : 
 name(name), HP_max(HP_max), HP_cur(HP_max), attack(attack), armor(armor), reloadTime(reloadTime){}
-
+//重载cout面板输出
 ostream & operator << (ostream &out, const Unit &u){
     out<<"name: "<<u.name;
     if(u.debug_tag != "") {
@@ -44,8 +44,6 @@ void Unit::reduceHPcur(int reduce_by) {
 void Unit::setDebugTag(string tag) {
     debug_tag = tag;
 }
-
-
  void Unit::unit_attack(Unit &opponent) {
    cout << *this << endl;
    cout << "attacking" << endl;

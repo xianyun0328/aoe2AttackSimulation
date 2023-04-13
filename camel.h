@@ -10,7 +10,5 @@ class Camel : public Cavalry{
         void unit_attack(Unit &opponent) override;
         int unit_attackedBy(Pikeman &opponent) override;
         int unit_attackedBy(Camel &opponent) override;
-        // void unit_attack(Unit *a);//攻击
-        // void unit_attackedBy(Unit *b);//被攻击
 };
 #endif
