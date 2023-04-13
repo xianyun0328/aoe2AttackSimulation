@@ -1,5 +1,4 @@
 #include "camel.h"
-
 Camel::Camel() : Cavalry("camel rider", 100, 6, 0, 2000){}
 Camel::Camel(string name, int HP_max, int attack, int armor, int reloadTime): 
 Cavalry(name, HP_max, attack, armor, reloadTime) {}

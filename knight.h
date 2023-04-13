@@ -13,4 +13,5 @@ class Knight : public Cavalry{
         int unit_attackedBy(Knight &opponent) override;
         int unit_attackedBy(Mamluk &opponent) override;
 };
+
 #endif

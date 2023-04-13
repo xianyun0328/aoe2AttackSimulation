@@ -17,7 +17,7 @@ class Unit{
     public:
         Unit(string name, int HP_max, int attack, int armor, int reloadTime);
         virtual void unit_attack(Unit &opponent);//攻击
-        virtual int unit_attackedBy(Pikeman &opponent) = 0;//被叉叉攻击
+        virtual int unit_attackedBy(Pikeman &opponent) = 0;//被长戟兵攻击
         virtual int unit_attackedBy(Camel &opponent) = 0;//被骆驼攻击
         virtual int unit_attackedBy(Knight &opponent) = 0;//被骑士攻击
         virtual int unit_attackedBy(Mamluk &opponent) = 0;//被马穆鲁克攻击

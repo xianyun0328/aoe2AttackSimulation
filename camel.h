@@ -2,7 +2,7 @@
 #define Camel_H
 #include "cavalry.h"
 #include "unit.h"
-// using std::string;
+//using std::string;
 //骆驼类
 class Camel : public Cavalry{
     public:

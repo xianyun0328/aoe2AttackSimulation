@@ -1,6 +1,5 @@
 #include "knight.h"
 
-
 Knight::Knight() : Cavalry("Knight", 100, 10, 2, 2000){}
 
 void Knight::unit_attack(Unit &opponent){

@@ -3,7 +3,7 @@
 #include "camel.h"
 #include "unit.h"
 // using std::string;
-//马穆鲁克类
+//马穆鲁克
 class Mamluk : public Camel{
     public:
         Mamluk();

@@ -1,7 +1,7 @@
 #ifndef Calalry_H
 #define Calalry_H
 #include "unit.h"
-using std::string;
+// using std::string;
 //骑兵类
 class Cavalry : public Unit{
     public:

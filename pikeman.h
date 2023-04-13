@@ -2,7 +2,7 @@
 #define Pikeman_H
 #include "infantry.h"
 #include "unit.h"
-//叉叉
+//长戟兵
 class Pikeman : public Infantry{
     public:
         Pikeman();
