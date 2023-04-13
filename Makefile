@@ -8,7 +8,6 @@ ${EXEC}: ${OBJECTS}
 	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
 
 -include ${DEPENDS}
-
 clean:
 	del ${OBJECTS} ${EXEC} ${DEPENDS}
 .PHONY: clean
