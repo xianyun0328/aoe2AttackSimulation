@@ -16,7 +16,7 @@ class Unit{
         int reloadTime;//攻击间隔 (in ms)
     public:
         Unit(string name, int HP_max, int attack, int armor, int reloadTime);
-        virtual void unit_attack(Unit &opponent);//攻击
+        virtual bool unit_attack(Unit &opponent);//攻击
         virtual int unit_attackedBy(Pikeman &opponent) = 0;//被长戟兵攻击
         virtual int unit_attackedBy(Camel &opponent) = 0;//被骆驼攻击
         virtual int unit_attackedBy(Knight &opponent) = 0;//被骑士攻击

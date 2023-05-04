@@ -17,9 +17,24 @@ int main(){
     // Knight *k2 = new Knight();
     Mamluk *m1 = new Mamluk();
     Mamluk *m2 = new Mamluk();
-    cout << *m1 << endl;
-    m2->unit_attack(*m1);
-    cout<<*m1<<endl;
+    int leftUnit = m1->getreloadTime();
+    int rightUnit = m2->getreloadTime();
+    int time = 0;
+    while(1){
+        time+=100;
+        if(time % leftUnit == 0){
+            if(m1->unit_attack(*m2) == 0){
+                cout<<*m1<<endl<<*m2<<endl<<"m2 GameOver"<<endl;
+                break;
+            }
+        }
+        if(time % rightUnit == 0){
+            if(m2->unit_attack(*m1) == 0){
+                cout<<*m1<<endl<<*m2<<endl<<"m1 GameOver"<<endl;
+                break;
+            }
+        }
+    }
     cout << "ending simulation..." << endl;
     return 0;
 }
