@@ -1,5 +1,4 @@
 #include "cavalry.h"
-
 using std::string;
 
 Cavalry::Cavalry(string name, int HP_max, int attack, int armor, int reloadTime): 

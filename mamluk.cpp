@@ -1,10 +1,11 @@
 #include "mamluk.h"
 
-Mamluk::Mamluk() : Camel("Mamluk", 65, 8, 0, 2000){}
+Mamluk::Mamluk() : Camel("Mamluk", 5, 8, 0, 2000){}
 
 void Mamluk::unit_attack(Unit &opponent){
     Unit::unit_attack(opponent);
-    opponent.reduceHPcur(opponent.unit_attackedBy(*this));
+    opponent.reduceHPcur(opponent.unit_attackedBy(*this));//扣除血量
+    bool status = opponent.observer(opponent);//观察状态
 }
 
 int Mamluk::unit_attackedBy(Pikeman &opponent){

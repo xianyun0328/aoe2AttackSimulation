@@ -15,6 +15,10 @@ ostream & operator << (ostream &out, const Unit &u){
     return out;
 
 }
+bool Unit::observer(Unit &opponent){
+    cout<<opponent.HP_cur;
+    return opponent.HP_cur>0;
+}
 string Unit::getname(){
     return name;
 }

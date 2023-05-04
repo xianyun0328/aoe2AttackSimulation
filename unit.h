@@ -21,6 +21,7 @@ class Unit{
         virtual int unit_attackedBy(Camel &opponent) = 0;//被骆驼攻击
         virtual int unit_attackedBy(Knight &opponent) = 0;//被骑士攻击
         virtual int unit_attackedBy(Mamluk &opponent) = 0;//被马穆鲁克攻击
+        bool observer(Unit &opponent);//观察者
         string getname();
         int getHPmax();
         int getHPcur();

@@ -4,7 +4,8 @@ Pikeman::Pikeman() : Infantry("pikeman", 55, 4, 0, 3000){}
 
 void Pikeman::unit_attack(Unit &opponent){
     Unit::unit_attack(opponent);
-    opponent.reduceHPcur(opponent.unit_attackedBy(*this));
+    opponent.reduceHPcur(opponent.unit_attackedBy(*this));//扣除血量
+    bool status = opponent.observer(opponent);//观察状态
 }
 
 int Pikeman::unit_attackedBy(Pikeman &opponent){
