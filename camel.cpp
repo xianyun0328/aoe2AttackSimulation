@@ -2,10 +2,9 @@
 Camel::Camel() : Cavalry("camel rider", 100, 6, 0, 2000){}
 Camel::Camel(string name, int HP_max, int attack, int armor, int reloadTime): 
 Cavalry(name, HP_max, attack, armor, reloadTime) {}
-bool Camel::unit_attack(Unit &opponent){
+void Camel::unit_attack(Unit &opponent){
     Unit::unit_attack(opponent);
     opponent.reduceHPcur(opponent.unit_attackedBy(*this));//扣除血量
-    return opponent.observer(opponent);//观察状态
 }
 int Camel::unit_attackedBy(Pikeman &opponent){
     return 18;

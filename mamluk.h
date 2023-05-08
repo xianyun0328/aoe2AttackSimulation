@@ -7,7 +7,7 @@
 class Mamluk : public Camel{
     public:
         Mamluk();
-        bool unit_attack(Unit &opponent) override;
+        void unit_attack(Unit &opponent) override;
         int unit_attackedBy(Pikeman &opponent) override;
         int unit_attackedBy(Camel &opponent) override;
         int unit_attackedBy(Knight &opponent) override;

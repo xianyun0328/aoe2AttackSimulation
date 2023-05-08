@@ -1,4 +1,5 @@
 #include <iostream>
+#include "observer.h"
 #include "unit.h"
 #include "infantry.h"
 #include "cavalry.h"
@@ -6,6 +7,7 @@
 #include "camel.h"
 #include "knight.h"
 #include "mamluk.h"
+
 using namespace std;
 int main(){
     cout << "starting simulation..." << endl;
@@ -17,20 +19,26 @@ int main(){
     // Knight *k2 = new Knight();
     Mamluk *m1 = new Mamluk();
     Mamluk *m2 = new Mamluk();
+    Observer* ob1 = new Observer(m1);
+    Observer* ob2 = new Observer(m2);
+    m1->setob(ob1);
+    m2->setob(ob2);
     int leftUnit = m1->getreloadTime();
     int rightUnit = m2->getreloadTime();
     int time = 0;
     while(1){
         time+=100;
         if(time % leftUnit == 0){
-            if(m1->unit_attack(*m2) == 0){
-                cout<<*m1<<endl<<*m2<<endl<<"m2 GameOver"<<endl;
+            m1->unit_attack(*m2);
+            if(!m2->lifeStateObserver()){
+                cout<<"m2 death..."<<endl;
                 break;
             }
         }
         if(time % rightUnit == 0){
-            if(m2->unit_attack(*m1) == 0){
-                cout<<*m1<<endl<<*m2<<endl<<"m1 GameOver"<<endl;
+            m2->unit_attack(*m1);
+            if(!m1->lifeStateObserver()){
+                cout<<"m1 death..."<<endl;
                 break;
             }
         }
