@@ -1,5 +1,5 @@
 #include "unit.h"
-#include "observer.h"
+#include "aliveObserver.h"
 #include <iostream>
 using std::string;
 using std::ostream;
@@ -16,9 +16,14 @@ ostream & operator << (ostream &out, const Unit &u){
     return out;
 
 }
-bool Unit::lifeStateObserver(){
-    return ob->lifeState();
+
+void Unit::addAliveObserver(AliveObserver* ob) {
+    this->ob = ob;
 }
+void Unit::notifyAliveObserver() {
+    ob->notified();
+}
+
 string Unit::getname(){
     return name;
 }
@@ -39,9 +44,6 @@ int Unit::getreloadTime(){
 }
 void Unit::reduceHPcur(int reduce_by) {
     HP_cur -= reduce_by;
-}
-void Unit::setob(Observer* ob){
-    this->ob = ob;
 }
 void Unit::unit_attack(Unit &opponent){
     int delNum = max(this->getattack() - opponent.getarmor(),1);//计算基础伤害,最低1点
