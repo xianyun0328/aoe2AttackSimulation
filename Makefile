@@ -1,7 +1,7 @@
 iCXX = g++
 CXXFLAGS = -std=c++14 -Wall -Werror=vla -g -MMD
 EXEC = aoe2AttackSimulator.exe
-OBJECTS = main.o unit.o cavalry.o infantry.o camel.o pikeman.o knight.o mamluk.o aliveObserver.o
+OBJECTS = main.o unit.o cavalry.o infantry.o camel.o pikeman.o knight.o mamluk.o observer.o aliveObserver.o 
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}

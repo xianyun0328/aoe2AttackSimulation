@@ -17,10 +17,10 @@ ostream & operator << (ostream &out, const Unit &u){
 
 }
 
-void Unit::addAliveObserver(AliveObserver* ob) {
+void Unit::addObserver(Observer* ob) {
     this->ob = ob;
 }
-void Unit::notifyAliveObserver() {
+void Unit::notifyObserver() {
     ob->notified();
 }
 

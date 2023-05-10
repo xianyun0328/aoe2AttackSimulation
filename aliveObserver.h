@@ -1,8 +1,9 @@
-#ifndef Observer_H
-#define Observer_H
+#ifndef aliveObserver_H
+#define aliveObserver_H
 #include "unit.h"
+
 //观察者
-class AliveObserver{
+class AliveObserver : public Observer{
     public:
         AliveObserver(Unit* unit);
         void notified();

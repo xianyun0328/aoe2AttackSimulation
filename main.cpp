@@ -1,4 +1,5 @@
 #include <iostream>
+#include "observer.h"
 #include "aliveObserver.h"
 #include "unit.h"
 #include "infantry.h"
@@ -21,26 +22,20 @@ int main(){
     Mamluk *m2 = new Mamluk();
     AliveObserver* ob1 = new AliveObserver(m1);
     AliveObserver* ob2 = new AliveObserver(m2);
-    m1->addAliveObserver(ob1);
-    m2->addAliveObserver(ob2);
-    int leftUnit = m1->getreloadTime();
-    int rightUnit = m2->getreloadTime();
-    int time = 0;
+    m1->addObserver(ob1);
+    m2->addObserver(ob2);
+    // int leftUnit = m1->getreloadTime();
+    // int rightUnit = m2->getreloadTime();
+    // int time = 0;
     // while(1){
     //     time+=100;
     //     if(time % leftUnit == 0){
     //         m1->unit_attack(*m2);
-    //         if(!m2->lifeStateObserver()){
-    //             cout<<"m2 death..."<<endl;
-    //             break;
-    //         }
+    //         m2->notifyObserver();
     //     }
     //     if(time % rightUnit == 0){
     //         m2->unit_attack(*m1);
-    //         if(!m1->lifeStateObserver()){
-    //             cout<<"m1 death..."<<endl;
-    //             break;
-    //         }
+    //         m1->notifyObserver();
     //     }
     // }
     cout << "ending simulation..." << endl;
