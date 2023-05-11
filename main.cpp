@@ -8,7 +8,7 @@
 #include "camel.h"
 #include "knight.h"
 #include "mamluk.h"
-
+#include "time.h"
 using namespace std;
 int main(){
     cout << "starting simulation..." << endl;
@@ -24,22 +24,24 @@ int main(){
     AliveObserver* ob2 = new AliveObserver(m2);
     m1->addObserver(ob1);
     m2->addObserver(ob2);
-    // int leftUnit = m1->getreloadTime();
-    // int rightUnit = m2->getreloadTime();
-    // int time = 0;
+    //Time* t = new Time(m1,m2);
     // while(1){
-    //     time+=100;
-    //     if(time % leftUnit == 0){
-    m1->unit_attack(*m2);
-    cout<<*m1<<endl;
-    cout<<*m2<<endl;
-    //         
-    //     }
-    //     if(time % rightUnit == 0){
+    //     if(t->nextAttack() == m1){
+    //         m1->unit_attack(*m2);
+    //         cout<<"m1 attack m2"<<endl;
+    //         if(ob2->unit_alive == 0){
+    //             break;
+    //         }
+    //     }else{
     //         m2->unit_attack(*m1);
-    //         m1->notifyObserver();
+    //         cout<<"m2 attack m1"<<endl;
+    //         if(ob1->unit_alive == 0){
+    //             break;
+    //         }
     //     }
     // }
+    cout<<*m1<<endl;
+    cout<<*m2<<endl;
     cout << "ending simulation..." << endl;
     return 0;
 }

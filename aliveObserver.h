@@ -6,8 +6,9 @@ class AliveObserver : public Observer{
     public:
         AliveObserver(Unit* unit);
         void notified();
+        bool unit_alive;
     private:
         Unit* unit;
-        bool unit_alive;
+        
 };
 #endif
