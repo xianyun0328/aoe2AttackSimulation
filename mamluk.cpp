@@ -3,8 +3,8 @@
 Mamluk::Mamluk() : Camel("Mamluk", 60, 8, 0, 2000){}
 
 void Mamluk::unit_attack(Unit &opponent){
-    Unit::unit_attack(opponent);
     opponent.reduceHPcur(opponent.unit_attackedBy(*this));//扣除血量
+    Unit::unit_attack(opponent);
 }
 
 int Mamluk::unit_attackedBy(Pikeman &opponent){

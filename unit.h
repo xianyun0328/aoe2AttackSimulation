@@ -2,6 +2,7 @@
 #define Unit_H
 #include "observer.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 class Pikeman;
 class Camel;
@@ -16,7 +17,7 @@ class Unit{
         int attack;//攻击力
         int armor;//防御力
         int reloadTime;//攻击间隔 (in ms)
-        Observer* ob;//观察者
+        vector<Observer*> obs;//观察者
     public:
         Unit(string name, int HP_max, int attack, int armor, int reloadTime);
         virtual void unit_attack(Unit &opponent);//攻击
@@ -25,7 +26,7 @@ class Unit{
         virtual int unit_attackedBy(Knight &opponent) = 0;//被骑士攻击
         virtual int unit_attackedBy(Mamluk &opponent) = 0;//被马穆鲁克攻击
         void addObserver(Observer* ob);//添加观察者
-        void notifyObserver(); //通知观察者
+        void notifyObservers(); //通知观察者
         string getname();
         int getHPmax();
         int getHPcur();

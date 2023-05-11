@@ -16,12 +16,13 @@ ostream & operator << (ostream &out, const Unit &u){
     return out;
 
 }
-
 void Unit::addObserver(Observer* ob) {
-    this->ob = ob;
+    this->obs.push_back(ob);
 }
-void Unit::notifyObserver() {
-    ob->notified();
+void Unit::notifyObservers() {
+    for(auto i : obs){
+        i->notified();
+    }
 }
 
 string Unit::getname(){
@@ -48,4 +49,5 @@ void Unit::reduceHPcur(int reduce_by) {
 void Unit::unit_attack(Unit &opponent){
     int delNum = max(this->getattack() - opponent.getarmor(),1);//计算基础伤害,最低1点
     opponent.reduceHPcur(delNum);
+    opponent.notifyObservers();
 }

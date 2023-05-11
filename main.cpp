@@ -18,8 +18,8 @@ int main(){
     // Camel *c2 = new Camel();
     //Knight *k1 = new Knight();
     // Knight *k2 = new Knight();
-    Mamluk *m1 = new Mamluk();
-    Mamluk *m2 = new Mamluk();
+    Unit *m1 = new Mamluk();
+    Unit *m2 = new Knight();
     AliveObserver* ob1 = new AliveObserver(m1);
     AliveObserver* ob2 = new AliveObserver(m2);
     m1->addObserver(ob1);
@@ -30,8 +30,10 @@ int main(){
     // while(1){
     //     time+=100;
     //     if(time % leftUnit == 0){
-    //         m1->unit_attack(*m2);
-    //         m2->notifyObserver();
+    m1->unit_attack(*m2);
+    cout<<*m1<<endl;
+    cout<<*m2<<endl;
+    //         
     //     }
     //     if(time % rightUnit == 0){
     //         m2->unit_attack(*m1);
