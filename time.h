@@ -3,13 +3,12 @@
 #include "unit.h"
 class Time{
     private:
+        int time;
         Unit* left;
         Unit* right;
-        int leftTime;
-        int rightTime;
     public:
         Time(Unit* left,Unit* right);
-        Unit* nextAttack();
+        int nextAttack();
 };
 
 

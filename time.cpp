@@ -1,19 +1,18 @@
 #include "time.h"
-Time::Time(Unit* left,Unit* right):left(left),right(right),leftTime(0),rightTime(0){
+Time::Time(Unit* left,Unit* right):left(left),right(right),time(0){
 
 }
-Unit* Time::nextAttack(){
-    while (1){
-        leftTime+=100;
-        rightTime+=100;
-        if(leftTime>= left->getreloadTime()){
-            leftTime-=left->getreloadTime();
-            return left;
-        }
-        if(rightTime>= right->getreloadTime()){
-            rightTime-=right->getreloadTime();
-            return right;
+int Time::nextAttack(){
+    bool tf = true;
+    while (tf){
+        time+=100;
+        if(time%left->getreloadTime() == 0 && time%right->getreloadTime() == 0){
+            return 3;
+        }else if(time%left->getreloadTime() == 0){
+            return 1;
+        }else if(time%right->getreloadTime() == 0){
+            return 2;
         }
     }
-    
+    return 0;
 }
