@@ -1,6 +1,6 @@
 #include "time.h"
-Time::Time(Unit* left,Unit* right):left(left),right(right),time(0){
-
+Time::Time(Unit* left,Unit* right):left(left),right(right){
+    time = 0;
 }
 int Time::nextAttack(){
     bool tf = true;

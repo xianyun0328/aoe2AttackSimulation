@@ -1,5 +1,6 @@
 #ifndef Duel_H
 #define Duel_H
+#include <random>
 #include "unit.h"
 #include "time.h"
 #include "aliveObserver.h"

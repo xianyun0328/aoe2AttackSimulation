@@ -23,7 +23,7 @@ int main(){
     Unit *m1 = new Mamluk();
     Unit *m2 = new Knight();
     Duel *duel = new Duel(m1,m2);
-    cout<<*duel->start();
+    cout<<"对决胜利者:"<<*duel->start();
     cout << "ending simulation..." << endl;
     return 0;
 }
